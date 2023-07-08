@@ -1,0 +1,26 @@
+2023-07-08 14:07:856 INFO  WebDriverManager:606 - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-08 14:07:908 INFO  WebDriverManager:662 - Exporting webdriver.chrome.driver as C:\Users\anirban nag\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-08 14:07:701 INFO  Waits:20 - Element found: By.xpath: //p[text()='Digital Pulse']
+2023-07-08 14:07:824 INFO  HomePageSteps:38 - 3 columns of articles are present
+2023-07-08 14:07:853 INFO  HomePageSteps:46 - 2 articles are present in the left column
+2023-07-08 14:07:878 INFO  HomePageSteps:53 - 1 article is present in the middle column
+2023-07-08 14:07:899 INFO  HomePageSteps:60 - 4 articles are present in the right column
+2023-07-08 14:07:895 INFO  WebDriverManager:606 - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-08 14:07:905 INFO  WebDriverManager:662 - Exporting webdriver.chrome.driver as C:\Users\anirban nag\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-08 14:07:597 INFO  Waits:20 - Element found: By.xpath: //p[text()='Digital Pulse']
+2023-07-08 14:07:784 INFO  Waits:20 - Element found: By.xpath: //a[contains(@navigation-title,'Subscribe')]
+2023-07-08 14:07:07 INFO  HomePageSteps:66 - Clicked Subscribe Link
+2023-07-08 14:07:110 INFO  Waits:20 - Element found: By.xpath: //h2[contains(text(), 'Subscribe')]
+2023-07-08 14:07:139 INFO  SubscribeDigtalPageSteps:26 - Subscribe page got displayed
+2023-07-08 14:07:15 INFO  Waits:20 - Element found: By.xpath: //div[text()='reCAPTCHA']
+2023-07-08 14:07:920 INFO  WebDriverManager:606 - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-07-08 14:07:931 INFO  WebDriverManager:662 - Exporting webdriver.chrome.driver as C:\Users\anirban nag\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-07-08 14:07:894 INFO  Waits:20 - Element found: By.xpath: //button[text()='Search']
+2023-07-08 14:07:168 INFO  HomePageSteps:72 - Clicked on Search Button
+2023-07-08 14:07:214 INFO  Waits:20 - Element found: By.xpath: //input[@name='searchfield']
+2023-07-08 14:07:507 INFO  HomePageSteps:80 - Text entered into the Searchbox
+2023-07-08 14:07:587 INFO  Waits:20 - Element found: By.xpath: //input[@type='submit']
+2023-07-08 14:07:956 INFO  HomePageSteps:87 - Clicked on the Submit Search button
+2023-07-08 14:07:488 INFO  Waits:20 - Element found: By.xpath: //h2[contains(text(),'Refine your search')]
+2023-07-08 14:07:521 INFO  SearchResultPageSteps:26 - Search Result page is displayed
+2023-07-08 14:07:542 INFO  SearchResultPageSteps:34 - Min 1 search result is present
