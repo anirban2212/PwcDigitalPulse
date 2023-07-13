@@ -7,9 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import generic.Waits;
+import generic.ElementWaitUtils;
 import managers.FileManager;
 
+/*
+ * This will handle all the object and methods of home page.
+ */
 public class HomePage {
 
 	public WebDriver driver;
@@ -20,83 +23,92 @@ public class HomePage {
 	private static final String SUBMITBUTTON = "//input[@type='submit']";
 	private static final String PAGETITLE = "//p[text()='Digital Pulse']";
 	private static final String COLUMNS = "//div[contains(@class,'headline_column')]";
-	
 
-
-	int Timeout = Integer.parseInt(FileManager.getFileReaderManagerInstance().getConfigReader().getWaitTimeout());
-
+	private int Timeout = Integer
+			.parseInt(FileManager.getFileReaderManagerInstance().getConfigReader().getWaitTimeout());
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	
-	public void goToDigitalPulseHomePage(){
+	/*
+	 * The below method is used to navigate to the home page.
+	 */
+	public void goToDigitalPulseHomePage() {
 		driver.get(FileManager.getFileReaderManagerInstance().getConfigReader().getApplicationUrl());
 	}
-	
-	
-	public void verifyHomePageDisplayed(String pageName){
+
+	/*
+	 * This is used to verify if Home page is opened or not
+	 */
+	public void verifyHomePageDisplayed(String pageName) {
 
 		By PageTitle = By.xpath(PAGETITLE);
-		WebElement element = Waits.WaitForElement(driver, PageTitle, Timeout);
+		WebElement element = ElementWaitUtils.waitForElement(driver, PageTitle, Timeout);
 		Assert.assertTrue(element.isDisplayed());
 
 	}
 
-	public void clickSearchLink()
-	{
+	/*
+	 * Below method will click the Search link
+	 */
+	public void clickSearchLink() {
 		By searchLink = By.xpath(SEARCHLINK);
-		WebElement element = Waits.WaitForElement(driver, searchLink, Timeout);
+		WebElement element = ElementWaitUtils.waitForElement(driver, searchLink, Timeout);
 		Assert.assertTrue(element.isDisplayed());
 		element.click();
 	}
-	
-	public void enterTextIntoTheSearchField(String text)
-	{
+
+	/*
+	 * Below method enter the text in the search box
+	 */
+	public void enterTextIntoTheSearchField(String text) {
 		By searchField = By.xpath(SEARCHFIELD);
-		WebElement element = Waits.WaitForElement(driver, searchField, Timeout);
+		WebElement element = ElementWaitUtils.waitForElement(driver, searchField, Timeout);
 		Assert.assertTrue(element.isDisplayed());
 		element.sendKeys(text);
 	}
-	
-	
-	public void clickOnSubmitButton()
-	{
+
+	/*
+	 * Below method will click on the Submit button
+	 */
+	public void clickOnSubmitButton() {
 		By submitButton = By.xpath(SUBMITBUTTON);
-		WebElement element = Waits.WaitForElement(driver, submitButton, Timeout);
+		WebElement element = ElementWaitUtils.waitForElement(driver, submitButton, Timeout);
 		Assert.assertTrue(element.isDisplayed());
 		element.click();
-		
+
 	}
 
-	
-	public void verifyNumberOfColumns(int NumberOfColumn)
-	{
+	/*
+	 * Objective of the below method is to verify number of columns present
+	 */
+	public void verifyNumberOfColumns(int NumberOfColumn) {
 		By columns = By.xpath(COLUMNS);
 		List<WebElement> elements = driver.findElements(columns);
 		int colCount = elements.size();
-		Assert.assertEquals(colCount,NumberOfColumn);
+		Assert.assertEquals(colCount, NumberOfColumn);
 	}
 
-	public void verifyNumberOfArticlesPerColumn(int column,int NumberOfArtcles)
-	{
-		String articles = ARTICLES.replace("$value$",String.valueOf(column));
+	/*
+	 * Objective of the below method is to verify number of articles present in each
+	 * column
+	 */
+	public void verifyNumberOfArticlesPerColumn(int column, int NumberOfArtcles) {
+		String articles = ARTICLES.replace("$value$", String.valueOf(column));
 		List<WebElement> elements = driver.findElements(By.xpath(articles));
 		int ArticleCount = elements.size();
-		Assert.assertEquals(NumberOfArtcles,ArticleCount);
+		Assert.assertEquals(NumberOfArtcles, ArticleCount);
 	}
-	
 
-	public void clickSubscribeLink()
-	{
+	/*
+	 * Below method will click the Subscribe Link
+	 */
+	public void clickSubscribeLink() {
 		By subscribeLink = By.xpath(SUBSCRIBELINK);
-		WebElement element = Waits.WaitForElement(driver, subscribeLink, Timeout);
+		WebElement element = ElementWaitUtils.waitForElement(driver, subscribeLink, Timeout);
 		element.click();
 
 	}
-	
-	
-	
-	
+
 }

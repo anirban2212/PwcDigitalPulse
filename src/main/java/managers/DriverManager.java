@@ -1,8 +1,8 @@
 package managers;
 
 import java.time.Duration;
-import java.util.HashMap;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,54 +11,62 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-	
-	public class DriverManager {
+/*
+ * This class is used to handle all the driver related function.
+ */
+public class DriverManager {
 
-		private String BrowserDriver;
-		private WebDriver driver;
+	private String browserDriver;
+	private WebDriver driver;
+	private static Logger log = LogManager.getLogger(DriverManager.class);
 
-		public DriverManager() {
-			BrowserDriver = FileManager.getFileReaderManagerInstance().getConfigReader().getBrowser();
+	public DriverManager() {
+		browserDriver = FileManager.getFileReaderManagerInstance().getConfigReader().getBrowser();
+	}
+
+	/*
+	 * This will return the current driver instance.
+	 */
+	public WebDriver getDriver() {
+		return createDriver();
+	}
+
+	/*
+	 * This will create a new driver instance.
+	 */
+	private WebDriver createDriver() {
+		switch (browserDriver) {
+		case "FireFox":
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			break;
+		case "Chrome":
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			options.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(options);
+			break;
+		case "InternetExplorer":
+			WebDriverManager.iedriver().setup();
+			driver = new InternetExplorerDriver();
+			break;
+		default:
+			log.error("opening browser has failed");
+			break;
+
 		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(
+				Integer.parseInt(FileManager.getFileReaderManagerInstance().getConfigReader().getWaitTimeout())));
+		return driver;
+	}
 
-		
-		public WebDriver getDriver() {
-			if(driver == null)
-				driver = createDriver();
-			return driver;
-		}
-		
-		
-		private WebDriver createDriver() {
-			switch (BrowserDriver) {
-			case "FireFox" : 
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
-				break;
-			case "Chrome" :
-				WebDriverManager.chromedriver().setup();
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--remote-allow-origins=*");
-				options.setAcceptInsecureCerts(true);
-				driver = new ChromeDriver(options);
-				break;
-			case "InternetExplorer" : 
-				driver = new InternetExplorerDriver();
-				break;
-			default:
-				System.out.println("Choose A Right a Option");
-				break;
-
-
-			}
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(FileManager.getFileReaderManagerInstance().getConfigReader().getWaitTimeout())));
-			return driver;
-		}
-		
-		
-		public void closeDriver() {
-			driver.quit();
-		}
+	/*
+	 * This will close all the driver instance.
+	 */
+	public void closeDriver() {
+		driver.quit();
+	}
 
 }

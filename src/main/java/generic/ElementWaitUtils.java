@@ -10,16 +10,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Waits {
+public class ElementWaitUtils {
 
-	private static Logger log = LogManager.getLogger(Waits.class); 
-	
-	 public static WebElement WaitForElement(WebDriver driver, By by, Integer timeoutInSeconds){
-	        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-	        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
-	        log.info("Element found: " + by);
-	        return driver.findElement(by);
-	    }
+	private static Logger log = LogManager.getLogger(ElementWaitUtils.class);
 
+	/*
+	 * This method is to wait for a particular element until it is visible or
+	 * detected by the xpath
+	 */
+	public static WebElement waitForElement(WebDriver driver, By by, Integer timeoutInSeconds) {
+		try {
+			WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+			webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
+			log.info("Element found: " + by);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return driver.findElement(by);
+
+	}
 
 }

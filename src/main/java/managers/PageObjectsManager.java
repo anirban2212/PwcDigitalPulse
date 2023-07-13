@@ -6,45 +6,51 @@ import pageObjects.HomePage;
 import pageObjects.SearchResultPage;
 import pageObjects.SubscribePage;
 
+/*
+ * This class is used to handle all the page objects.
+ */
 public class PageObjectsManager {
-	
-	 private WebDriver driver;
-	 private HomePage homePage;
-	 private SubscribePage subscribedigitalpage;
 
-	 private SearchResultPage searchResultPage;
+	private WebDriver driver;
+	private HomePage homePage;
+	private SubscribePage subscribeDigitalPage;
 
+	private SearchResultPage searchResultPage;
 
-	    public PageObjectsManager(WebDriver driver) {
-	        this.driver = driver;
-	    }
+	public PageObjectsManager(WebDriver driver) {
+		this.driver = driver;
+	}
 
-	  
-	    public HomePage getHomePage() {
-	        if(homePage == null)
-	        	return new HomePage(driver);
-	        else
-	        	return homePage;
-	    }
-	   
-	    public SubscribePage getSubscribeDigitalPage() {
-	         if(subscribedigitalpage == null)
-	        	 return new SubscribePage(driver);
-	         else
-	        	 return subscribedigitalpage;
-	    }
+	/*
+	 * This will return an instance of Home page.
+	 */
+	public HomePage getHomePage() {
+		if (homePage == null) {
+			homePage = new HomePage(driver);
+		}
+		return homePage;
+	}
 
-	  
-	    public SearchResultPage getSearchResultPage() {
-	         if(searchResultPage == null)
-	        	 return new SearchResultPage(driver);
-	         else
-	        	 return searchResultPage;
-	    }
+	/*
+	 * This will return an instance of Subscribe Page .
+	 */
+	public SubscribePage getSubscribeDigitalPage() {
+		if (subscribeDigitalPage == null) {
+			subscribeDigitalPage = new SubscribePage(driver);
+		}
 
-	    
-	   
+		return subscribeDigitalPage;
+	}
 
+	/*
+	 * This will return an instance of SearchResult Page.
+	 */
+	public SearchResultPage getSearchResultPage() {
+		if (searchResultPage == null) {
+			searchResultPage = new SearchResultPage(driver);
+		}
 
+		return searchResultPage;
+	}
 
 }

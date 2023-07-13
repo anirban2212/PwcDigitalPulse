@@ -22,7 +22,7 @@ public class SearchResultPageSteps {
 	@Then("^I am taken to the search results page$")
 	public void I_Am_Taken_To_The_SearchResultsPage() {
 
-		searchresultpage.verifySearchResultPageisDisplayed();
+		searchresultpage.verifySearchResultPageIsDisplayed();
 		log.info("Search Result page is displayed");
 	}
 

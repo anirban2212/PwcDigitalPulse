@@ -22,7 +22,9 @@ public class Hooks {
 
 
    
-   
+   /*
+    * This method will close the driver instance.
+    */
     @After(order = 0)
     public void AfterSteps() {
     	context.getWebDriverManager().closeDriver();

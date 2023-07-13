@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-07-13T05:27:18.364Z",
+        "start_timestamp": "2023-07-13T07:50:51.177Z",
         "line": 13,
         "name": "Verfication of number of columns and articles",
         "description": "",
@@ -11,7 +11,7 @@
         "after": [
           {
             "result": {
-              "duration": 4000200,
+              "duration": 4998400,
               "status": "passed"
             },
             "match": {
@@ -20,7 +20,7 @@
           },
           {
             "result": {
-              "duration": 1142800900,
+              "duration": 897948900,
               "status": "passed"
             },
             "match": {
@@ -33,7 +33,7 @@
         "steps": [
           {
             "result": {
-              "duration": 37446482700,
+              "duration": 10889607800,
               "status": "passed"
             },
             "line": 5,
@@ -45,7 +45,7 @@
           },
           {
             "result": {
-              "duration": 594821200,
+              "duration": 267914800,
               "status": "passed"
             },
             "line": 6,
@@ -63,7 +63,7 @@
           },
           {
             "result": {
-              "duration": 81978800,
+              "duration": 34988100,
               "status": "passed"
             },
             "line": 7,
@@ -81,7 +81,7 @@
           },
           {
             "result": {
-              "duration": 21990400,
+              "duration": 27989700,
               "status": "passed"
             },
             "line": 8,
@@ -103,7 +103,7 @@
           },
           {
             "result": {
-              "duration": 38989900,
+              "duration": 36988800,
               "status": "passed"
             },
             "line": 9,
@@ -125,7 +125,7 @@
           },
           {
             "result": {
-              "duration": 27990400,
+              "duration": 65979800,
               "status": "passed"
             },
             "line": 10,
@@ -153,7 +153,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-07-13T05:27:58.036Z",
+        "start_timestamp": "2023-07-13T07:51:03.709Z",
         "line": 33,
         "name": "Subsribe Page Fields Verification",
         "description": "",
@@ -161,7 +161,6 @@
         "after": [
           {
             "result": {
-              "duration": 999900,
               "status": "passed"
             },
             "match": {
@@ -170,7 +169,7 @@
           },
           {
             "result": {
-              "duration": 814089200,
+              "duration": 861278900,
               "status": "passed"
             },
             "match": {
@@ -183,7 +182,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6779604900,
+              "duration": 26154533900,
               "status": "passed"
             },
             "line": 17,
@@ -195,7 +194,7 @@
           },
           {
             "result": {
-              "duration": 300904400,
+              "duration": 277911800,
               "status": "passed"
             },
             "line": 18,
@@ -213,7 +212,7 @@
           },
           {
             "result": {
-              "duration": 2245652900,
+              "duration": 2214931200,
               "status": "passed"
             },
             "line": 19,
@@ -225,7 +224,7 @@
           },
           {
             "result": {
-              "duration": 128957800,
+              "duration": 168944700,
               "status": "passed"
             },
             "line": 20,
@@ -237,7 +236,7 @@
           },
           {
             "result": {
-              "duration": 809740300,
+              "duration": 779754000,
               "status": "passed"
             },
             "line": 21,
@@ -307,7 +306,7 @@
           },
           {
             "result": {
-              "duration": 134355300,
+              "duration": 122961700,
               "status": "passed"
             },
             "line": 30,
@@ -325,7 +324,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-07-13T05:28:09.271Z",
+        "start_timestamp": "2023-07-13T07:51:34.307Z",
         "line": 45,
         "name": "verification of Number of Search Results",
         "description": "",
@@ -333,7 +332,7 @@
         "after": [
           {
             "result": {
-              "duration": 983000,
+              "duration": 999700,
               "status": "passed"
             },
             "match": {
@@ -342,7 +341,7 @@
           },
           {
             "result": {
-              "duration": 840398700,
+              "duration": 904346700,
               "status": "passed"
             },
             "match": {
@@ -355,7 +354,7 @@
         "steps": [
           {
             "result": {
-              "duration": 25804634600,
+              "duration": 7107452300,
               "status": "passed"
             },
             "line": 37,
@@ -367,7 +366,7 @@
           },
           {
             "result": {
-              "duration": 532831200,
+              "duration": 467850600,
               "status": "passed"
             },
             "line": 38,
@@ -379,7 +378,7 @@
           },
           {
             "result": {
-              "duration": 423872100,
+              "duration": 530831900,
               "status": "passed"
             },
             "line": 39,
@@ -397,7 +396,7 @@
           },
           {
             "result": {
-              "duration": 1517514600,
+              "duration": 1343151400,
               "status": "passed"
             },
             "line": 40,
@@ -409,7 +408,7 @@
           },
           {
             "result": {
-              "duration": 765861100,
+              "duration": 533128800,
               "status": "passed"
             },
             "line": 41,
@@ -421,7 +420,7 @@
           },
           {
             "result": {
-              "duration": 19010800,
+              "duration": 18992100,
               "status": "passed"
             },
             "line": 42,
