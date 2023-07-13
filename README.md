@@ -1,17 +1,21 @@
-This Project is related to validating the PwC Digital Pulse WebSite. In this project we have used Cucumber framework where we write BDD code in Feature file, the source code related to the feature file written in StepDefination files. We also implemented Page Object Model here and we created different page files related to different pages in the application. We have implemented hooks to implement common code which runs before and after each scenario. We define tags also in this framework so that we can run the scenarios as per our need.
+This project is used to validate the PwC Digital website.
 
-We need to have below prerequisite to run the code in local environment:
+Prerequisites for this project::
 
-	1. JDK(Version 11 is preferable)
-	2. Maven
-	3. Eclipse or IntelliJ IDE
-	4. Cucumber Plugin should be installed in the Project.
-	5. TestNG Plugin should be installed in the project.
+1. JDK(version 11 is preferable)
+2. Maven
+3. IDE(Eclipse,Intellij)
+4. The cucumber plugin should be installed in the project.
+5. TestNG plugin should be installed in the project.
 
+Steps to execute the project:
 
-Steps for executing the project Locally:
+1. Take a pull of the codebase from Git Hub.
 
-	1. Take a fresh clone of the codebase from github.
-	2. Build the project to download the maven dependencies for the project.
-	3. Execute the command via commandline using mvn commands or exucute direcly the CucumberTestRunner.java file under src/test/java/runner package.
-	4. check the test-output folder for the Extent Spark and HTML report.
+2. Build the project to download the maven dependencies for the project.
+
+3. Execute the TestRunner.java file under src/test/java/runner file to execute the existing feature files. @smoke, @Sanity, and @Regression tags are used in the CucumberRunner.java file.
+
+Check the test-output folder for the spark and html report.
+
+**Note::Last execution report is attached in the test-output folder.
